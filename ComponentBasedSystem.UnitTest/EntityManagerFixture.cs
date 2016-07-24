@@ -65,6 +65,26 @@ namespace ComponentBasedSystem.UnitTest {
             Assert.That(id, Is.EqualTo(1));
         }
 
+        [Test]
+        public void AddNewEntityWith5ComponentsToEntityManager() {
+            var builder = new ContainerBuilder();
+            builder.RegisterType<EntityManager>().As<IEntityManager>().SingleInstance();
+            var container = builder.Build();
+
+            IEntityManager entityManager = container.Resolve<IEntityManager>();
+
+            entityManager.AddEntity(new List<IEntityComponent> { new HealthComponent(10, 5),
+                                                                          new HealthComponent(10, 0),
+                                                                          new HealthComponent(10, 0),
+                                                                          new HealthComponent(10, 0),
+                                                                          new HealthComponent(10, 0)
+            });
+
+            var componentsOfEntity = entityManager.GetEntityComponents(0);
+
+            Assert.That(componentsOfEntity.Count, Is.EqualTo(5));
+        }
+
 
         [Test]
         public void AddNewEntityToEntityManager_GetAddedComponentsOfNewEntity() {
@@ -81,5 +101,7 @@ namespace ComponentBasedSystem.UnitTest {
             Assert.That(componentsOfEntity.Count, Is.EqualTo(1));
             Assert.That(componentsOfEntity[0], Is.TypeOf(typeof(HealthComponent)));
         }
+
+
     }
 }
