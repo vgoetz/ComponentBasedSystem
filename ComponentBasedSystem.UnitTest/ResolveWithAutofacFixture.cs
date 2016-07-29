@@ -18,5 +18,17 @@ namespace ComponentBasedSystem.UnitTest {
             Assert.That(entityManager, Is.Not.Null);
             Assert.That(entityManager, Is.TypeOf(typeof (EntityManager)));
         }
+
+        [Test]
+        public void ResolveHealthComponentWithAutofacTest() {
+            var builder = new ContainerBuilder();
+            builder.RegisterType<HealthComponent>().SingleInstance();
+            var container = builder.Build();
+
+            HealthComponent entityManager = container.Resolve<HealthComponent>();
+
+            Assert.That(entityManager, Is.Not.Null);
+            Assert.That(entityManager, Is.TypeOf(typeof(HealthComponent)));
+        }
     }
 }
