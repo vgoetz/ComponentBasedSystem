@@ -1,4 +1,6 @@
-﻿using ComponentBasedSystem.BootstrapperAndMondules;
+﻿using Autofac;
+using ComponentBasedSystem.BootstrapperAndMondules;
+using ComponentBasedSystem.Core;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
@@ -8,7 +10,9 @@ namespace ComponentBasedSystem {
 
         GraphicsDeviceManager _graphics;
         SpriteBatch _spriteBatch;
-        Bootstrapper _bootstrapper;
+        readonly Bootstrapper _bootstrapper;
+        IContainer _container;
+        IEntityManager _entityManager;
 
         public MyGame() {
             _graphics = new GraphicsDeviceManager(this);
@@ -27,7 +31,9 @@ namespace ComponentBasedSystem {
             // TODO: Add your initialization logic here
 
             base.Initialize();
-            _bootstrapper.Run();
+            _container = _bootstrapper.CreateContainer();
+
+            _entityManager = _container.Resolve<IEntityManager>();
         }
 
         /// <summary>
@@ -68,6 +74,7 @@ namespace ComponentBasedSystem {
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
             // TODO: Add your drawing code here
+            
 
             base.Draw(gameTime);
         }

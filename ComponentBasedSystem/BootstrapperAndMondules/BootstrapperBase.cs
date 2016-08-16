@@ -3,7 +3,7 @@
 namespace ComponentBasedSystem.BootstrapperAndMondules {
     public abstract class BootstrapperBase {
 
-        public void Run() {
+        public IContainer CreateContainer() {
             // register modules
             var builder = new ContainerBuilder();
             ConfigureContainer(builder);
@@ -11,6 +11,8 @@ namespace ComponentBasedSystem.BootstrapperAndMondules {
             // configure app defaults
             var container = builder.Build();
             ConfigureApplication(container);
+
+            return container;
         }
 
         /// <summary>
