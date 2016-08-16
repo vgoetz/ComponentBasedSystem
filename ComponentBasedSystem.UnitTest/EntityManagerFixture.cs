@@ -43,7 +43,7 @@ namespace ComponentBasedSystem.UnitTest {
 
             IEntityManager entityManager = container.Resolve<IEntityManager>();
 
-            entityManager.AddEntity(new List<IEntityComponent> { new HealthComponent(10, 5) });
+            entityManager.AddEntity(new List<IEntityComponent> { new HealthComponent() });
 
             Assert.That(entityManager.GetEntityCount(), Is.EqualTo(1));
         }
@@ -56,11 +56,11 @@ namespace ComponentBasedSystem.UnitTest {
 
             IEntityManager entityManager = container.Resolve<IEntityManager>();
 
-            var id = entityManager.AddEntity(new List<IEntityComponent> { new HealthComponent(10, 5) });
+            var id = entityManager.AddEntity(new List<IEntityComponent> { new HealthComponent() });
 
             Assert.That(id, Is.EqualTo(0));
 
-            id = entityManager.AddEntity(new List<IEntityComponent> { new HealthComponent(10, 5) });
+            id = entityManager.AddEntity(new List<IEntityComponent> { new HealthComponent() });
 
             Assert.That(id, Is.EqualTo(1));
         }
@@ -73,11 +73,11 @@ namespace ComponentBasedSystem.UnitTest {
 
             IEntityManager entityManager = container.Resolve<IEntityManager>();
 
-            entityManager.AddEntity(new List<IEntityComponent> { new HealthComponent(10, 5),
-                                                                          new HealthComponent(10, 0),
-                                                                          new HealthComponent(10, 0),
-                                                                          new HealthComponent(10, 0),
-                                                                          new HealthComponent(10, 0)
+            entityManager.AddEntity(new List<IEntityComponent> { new HealthComponent(),
+                                                                 new HealthComponent(),
+                                                                 new HealthComponent(),
+                                                                 new HealthComponent(),
+                                                                 new HealthComponent()
             });
 
             var componentsOfEntity = entityManager.GetEntityComponents(0);
@@ -94,7 +94,7 @@ namespace ComponentBasedSystem.UnitTest {
 
             IEntityManager entityManager = container.Resolve<IEntityManager>();
 
-            entityManager.AddEntity(new List<IEntityComponent> { new HealthComponent(10, 5) });
+            entityManager.AddEntity(new List<IEntityComponent> { new HealthComponent() });
 
             var componentsOfEntity = entityManager.GetEntityComponents(0);
             
