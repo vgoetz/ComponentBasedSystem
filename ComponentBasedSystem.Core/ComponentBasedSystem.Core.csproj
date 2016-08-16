@@ -43,6 +43,7 @@
     <Compile Include="EntityManager.cs" />
     <Compile Include="HealthComponent.cs" />
     <Compile Include="IEntityComponent.cs" />
+    <Compile Include="IEntityManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

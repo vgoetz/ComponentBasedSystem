@@ -2,13 +2,6 @@
 using System.Linq;
 
 namespace ComponentBasedSystem.Core {
-
-    public interface IEntityManager {
-        long AddEntity(IEnumerable<IEntityComponent> entityComponentList);
-        int GetEntityCount();
-        IList<IEntityComponent> GetEntityComponents(int id);
-    }
-
     public class EntityManager : IEntityManager {
         private readonly Dictionary<long, List<IEntityComponent>> _entities;
 

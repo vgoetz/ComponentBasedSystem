@@ -1,6 +1,6 @@
 using Autofac;
 
-namespace ComponentBasedSystem.Bootstrapper {
+namespace ComponentBasedSystem.BootstrapperAndMondules {
     public class CoreModule : Module {
 
         protected override void Load(ContainerBuilder builder) {

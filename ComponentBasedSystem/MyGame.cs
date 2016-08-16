@@ -1,4 +1,5 @@
-﻿using Microsoft.Xna.Framework;
+﻿using ComponentBasedSystem.BootstrapperAndMondules;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 
 namespace ComponentBasedSystem {
@@ -7,10 +8,13 @@ namespace ComponentBasedSystem {
 
         GraphicsDeviceManager _graphics;
         SpriteBatch _spriteBatch;
+        Bootstrapper _bootstrapper;
 
         public MyGame() {
             _graphics = new GraphicsDeviceManager(this);
             Content.RootDirectory = "Content";
+
+            _bootstrapper = new Bootstrapper();
         }
 
         /// <summary>
@@ -23,6 +27,7 @@ namespace ComponentBasedSystem {
             // TODO: Add your initialization logic here
 
             base.Initialize();
+            _bootstrapper.Run();
         }
 
         /// <summary>

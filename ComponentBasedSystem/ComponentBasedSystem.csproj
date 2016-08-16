@@ -51,9 +51,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Bootstrapper\BootstrapperBase.cs" />
-    <Compile Include="Bootstrapper\CoreModule.cs" />
-    <Compile Include="Bootstrapper\ComponentBasedSystemModule.cs" />
+    <Compile Include="BootstrapperAndMondules\Bootstrapper.cs" />
+    <Compile Include="BootstrapperAndMondules\BootstrapperBase.cs" />
+    <Compile Include="BootstrapperAndMondules\CoreModule.cs" />
+    <Compile Include="BootstrapperAndMondules\ComponentBasedSystemModule.cs" />
     <Compile Include="MyGame.cs" />
     <Compile Include="MainProgram.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
