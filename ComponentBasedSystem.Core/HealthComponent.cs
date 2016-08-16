@@ -5,8 +5,11 @@
         private int _health;
         private int _armour;
 
-        public HealthComponent(int health, int armour) {
+        public void SetHealth(int health) {
             _health = health;
+        }
+
+        public void SetArmour(int armour) {
             _armour = armour;
         }
 
