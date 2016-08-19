@@ -49,6 +49,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="EntityManagerFixture.cs" />
+    <Compile Include="BootstrapperFixture.cs" />
     <Compile Include="ResolveWithAutofacFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
