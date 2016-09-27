@@ -48,7 +48,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="EntityManagerFixture.cs" />
+    <Compile Include="EngineFixture.cs" />
     <Compile Include="BootstrapperFixture.cs" />
     <Compile Include="ResolveWithAutofacFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

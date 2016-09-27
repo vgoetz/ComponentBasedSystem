@@ -1,6 +1,6 @@
 ﻿namespace ComponentBasedSystem.Core {
 
-    public interface IEntityComponent {
+    public interface IComponent {
 
     }
 }

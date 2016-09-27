@@ -1,6 +1,6 @@
 ﻿namespace ComponentBasedSystem.Core {
 
-    public class HealthComponent : IEntityComponent {
+    public class HealthComponent : IComponent {
 
         private int _health;
         private int _armour;

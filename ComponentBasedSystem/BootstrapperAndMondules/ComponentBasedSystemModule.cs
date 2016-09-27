@@ -8,8 +8,8 @@ namespace ComponentBasedSystem.BootstrapperAndMondules {
             base.Load(builder);
 
             // service registration
-            builder.RegisterType<EntityManager>()
-                .As<IEntityManager>()
+            builder.RegisterType<Engine>()
+                .As<IEngine>()
                 .SingleInstance();
 
         }

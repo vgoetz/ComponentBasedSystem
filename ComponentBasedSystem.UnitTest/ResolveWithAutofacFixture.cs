@@ -10,13 +10,13 @@ namespace ComponentBasedSystem.UnitTest {
         [Test]
         public void ResolveEntityManagerWithAutofacTest() {
             var builder = new ContainerBuilder();
-            builder.RegisterType<EntityManager>().As<IEntityManager>().SingleInstance();
+            builder.RegisterType<Engine>().As<IEngine>().SingleInstance();
             var container = builder.Build();
 
-            IEntityManager entityManager = container.Resolve<IEntityManager>();
+            IEngine engine = container.Resolve<IEngine>();
 
-            Assert.That(entityManager, Is.Not.Null);
-            Assert.That(entityManager, Is.TypeOf(typeof (EntityManager)));
+            Assert.That(engine, Is.Not.Null);
+            Assert.That(engine, Is.TypeOf(typeof (Engine)));
         }
 
         [Test]

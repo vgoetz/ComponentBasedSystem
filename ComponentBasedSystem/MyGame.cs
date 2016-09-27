@@ -12,7 +12,7 @@ namespace ComponentBasedSystem {
         SpriteBatch _spriteBatch;
         readonly Bootstrapper _bootstrapper;
         IContainer _container;
-        IEntityManager _entityManager;
+        IEngine _engine;
 
         public MyGame() {
             _graphics = new GraphicsDeviceManager(this);
@@ -33,7 +33,7 @@ namespace ComponentBasedSystem {
             base.Initialize();
             _container = _bootstrapper.CreateContainer();
 
-            _entityManager = _container.Resolve<IEntityManager>();
+            _engine = _container.Resolve<IEngine>();
         }
 
         /// <summary>

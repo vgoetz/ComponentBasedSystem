@@ -12,10 +12,10 @@ namespace ComponentBasedSystem.UnitTest {
         public void ResolveEntityManagerWithAutofacAfterBootstrapperTest() {
             var bootstrapper = new Bootstrapper();
             var container = bootstrapper.CreateContainer();
-            var entityManager = container.Resolve<IEntityManager>();
+            var entityManager = container.Resolve<IEngine>();
 
             Assert.That(entityManager, Is.Not.Null);
-            Assert.That(entityManager, Is.TypeOf(typeof(EntityManager)));
+            Assert.That(entityManager, Is.TypeOf(typeof(Engine)));
         }
     }
 }
