@@ -48,8 +48,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ComponentFixture.cs" />
     <Compile Include="EngineFixture.cs" />
     <Compile Include="BootstrapperFixture.cs" />
+    <Compile Include="EntityFixture.cs" />
     <Compile Include="ResolveWithAutofacFixture.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

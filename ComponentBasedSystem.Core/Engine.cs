@@ -2,6 +2,7 @@
 using System.Linq;
 
 namespace ComponentBasedSystem.Core {
+
     public class Engine : IEngine {
 
         private readonly Dictionary<long, IEntity> _entities;
@@ -24,7 +25,7 @@ namespace ComponentBasedSystem.Core {
         }
 
         public IEntity GetEntity(int id) {
-            if (_entities.con)
+            return _entities.ContainsKey(id) ? _entities[id] : null;
         }
 
         //public IList<IComponent> GetComponentsFromEntity(int id) {
