@@ -1,4 +1,4 @@
-﻿namespace ComponentBasedSystem.Core {
+﻿namespace ComponentBasedSystem.Core.Components {
 
     public class HealthComponent : IComponent {
 

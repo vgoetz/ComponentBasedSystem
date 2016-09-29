@@ -1,6 +1,5 @@
-﻿using System.Collections.Generic;
-using Autofac;
-using ComponentBasedSystem.Core;
+﻿using Autofac;
+using ComponentBasedSystem.Core.Engine;
 using NUnit.Framework;
 
 namespace ComponentBasedSystem.UnitTest {

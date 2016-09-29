@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using ComponentBasedSystem.Core;
+using ComponentBasedSystem.Core.Engine;
 
 namespace ComponentBasedSystem.BootstrapperAndMondules {
     public class ComponentBasedSystemModule : Module {

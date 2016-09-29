@@ -1,5 +1,6 @@
 ﻿using Autofac;
-using ComponentBasedSystem.Core;
+using ComponentBasedSystem.Core.Components;
+using ComponentBasedSystem.Core.Engine;
 using NUnit.Framework;
 
 namespace ComponentBasedSystem.UnitTest {

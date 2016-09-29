@@ -1,17 +1,18 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using ComponentBasedSystem.Core.Entities;
 
-namespace ComponentBasedSystem.Core {
+namespace ComponentBasedSystem.Core.Engine {
 
     public class Engine : IEngine {
 
-        private readonly Dictionary<long, IEntity> _entities;
+        private readonly Dictionary<long, Entity> _entities;
 
         public Engine() {
-            _entities = new Dictionary<long, IEntity>();
+            _entities = new Dictionary<long, Entity>();
         }
 
-        public long AddEntity(IEntity entity) {
+        public long AddEntity(Entity entity) {
 
             long newKey = 0;
 
@@ -24,18 +25,9 @@ namespace ComponentBasedSystem.Core {
             return newKey;
         }
 
-        public IEntity GetEntity(int id) {
+        public Entity GetEntity(int id) {
             return _entities.ContainsKey(id) ? _entities[id] : null;
         }
-
-        //public IList<IComponent> GetComponentsFromEntity(int id) {
-
-        //    if (_entities.ContainsKey(id)) {
-        //        return _entities[id].;
-        //    }
-
-        //    return new List<IComponent>();
-        //}
 
         public int GetEntityCount() {
             return _entities.Count;

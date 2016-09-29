@@ -1,6 +1,6 @@
 ﻿using Autofac;
 using ComponentBasedSystem.BootstrapperAndMondules;
-using ComponentBasedSystem.Core;
+using ComponentBasedSystem.Core.Engine;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 

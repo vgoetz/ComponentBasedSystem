@@ -1,4 +1,4 @@
-﻿namespace ComponentBasedSystem.Core {
+﻿namespace ComponentBasedSystem.Core.Components {
 
     public class PositionComponent : IComponent {
         public int X { get; set; }

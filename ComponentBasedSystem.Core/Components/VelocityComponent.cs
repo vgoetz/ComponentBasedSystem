@@ -1,6 +1,6 @@
-﻿namespace ComponentBasedSystem.Core {
+﻿namespace ComponentBasedSystem.Core.Components {
 
-    public class VelocityComponent {
+    public class VelocityComponent : IComponent {
         private int _rotation;
         public int VelocityX { get; set; }
         public int VelocityY { get; set; }
