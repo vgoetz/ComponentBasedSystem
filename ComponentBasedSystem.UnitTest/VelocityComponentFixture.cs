@@ -6,7 +6,6 @@ namespace ComponentBasedSystem.UnitTest {
     [TestFixture]
     public class VelocityComponentFixture {
 
-        [TestCase(-0)]
         [TestCase(0)]
         [TestCase(1)]
         [TestCase(50)]

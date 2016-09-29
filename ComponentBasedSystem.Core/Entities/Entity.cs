@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using ComponentBasedSystem.Core.Components;
+using ComponentBasedSystem.Core.Nodes;
 
 namespace ComponentBasedSystem.Core.Entities {
 
@@ -16,5 +17,15 @@ namespace ComponentBasedSystem.Core.Entities {
         }
 
         public IReadOnlyDictionary<Type, IComponent> Components => _components;
+
+        public IEnumerable<INode> GetNodes() {
+            if (_components.ContainsKey(typeof (PositionComponent)) &&
+                _components.ContainsKey(typeof (VelocityComponent))) {
+                yield return new MoveNode {
+                    PositionComponent = _components[typeof(PositionComponent)] as PositionComponent,
+                    VelocityComponent = _components[typeof(VelocityComponent)] as VelocityComponent
+                };
+            }
+        }
     }
 }

@@ -24,14 +24,7 @@ namespace ComponentBasedSystem.Core.Engine {
 
             return newKey;
         }
-
-        public Entity GetEntity(int id) {
-            return _entities.ContainsKey(id) ? _entities[id] : null;
-        }
-
-        public int GetEntityCount() {
-            return _entities.Count;
-        }
-
+        
+        public IReadOnlyDictionary<long, Entity> Entities => _entities;
     }
 }
