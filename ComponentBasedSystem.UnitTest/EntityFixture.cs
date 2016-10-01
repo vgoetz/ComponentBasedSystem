@@ -54,11 +54,13 @@ namespace ComponentBasedSystem.UnitTest {
             var velocitycomponent = new VelocityComponent();
             var bear = new Bear(positionComponent, velocitycomponent);
 
-            IEnumerable<INode> nodes = bear.GetNodes();
-            INode firstNode = nodes.FirstOrDefault();
+            List<INode> nodes = bear.GetNodes().ToList();
 
             Assert.That(nodes, Is.Not.Null);
             Assert.That(nodes, Is.Not.Empty);
+            Assert.That(nodes.Count(), Is.EqualTo(1));
+
+            INode firstNode = nodes.FirstOrDefault();
             Assert.That(firstNode, Is.InstanceOf(typeof(INode)));
             Assert.That(firstNode, Is.InstanceOf(typeof(MoveNode)));
         }
