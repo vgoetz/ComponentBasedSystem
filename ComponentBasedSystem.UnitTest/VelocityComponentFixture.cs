@@ -14,10 +14,10 @@ namespace ComponentBasedSystem.UnitTest {
         [TestCase(360)]
         public void SetValidRotations(int rotation) {
             var velocityComponent = new VelocityComponent {
-                Rotation = rotation
+                AngularVelocity = rotation
             };
             
-            Assert.That(velocityComponent.Rotation, Is.EqualTo(rotation));
+            Assert.That(velocityComponent.AngularVelocity, Is.EqualTo(rotation));
         }
 
         [TestCase(-1)]
@@ -28,10 +28,10 @@ namespace ComponentBasedSystem.UnitTest {
         [TestCase(-999)]
         public void SetRotationValueLowerThan0(int rotation) {
             var velocityComponent = new VelocityComponent {
-                Rotation = rotation
+                AngularVelocity = rotation
             };
 
-            Assert.That(velocityComponent.Rotation, Is.EqualTo(0));
+            Assert.That(velocityComponent.AngularVelocity, Is.EqualTo(0));
         }
 
         [TestCase(361)]
@@ -40,10 +40,10 @@ namespace ComponentBasedSystem.UnitTest {
         [TestCase(10000)]
         public void SetRotationValueGreaterThan360(int rotation) {
             var velocityComponent = new VelocityComponent {
-                Rotation = rotation
+                AngularVelocity = rotation
             };
 
-            Assert.That(velocityComponent.Rotation, Is.EqualTo(360));
+            Assert.That(velocityComponent.AngularVelocity, Is.EqualTo(360));
         }
     }
 }

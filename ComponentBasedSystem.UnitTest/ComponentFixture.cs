@@ -15,21 +15,24 @@ namespace ComponentBasedSystem.UnitTest {
 
         [Test]
         public void CreatePositionComponentWithConstructorValues() {
-            var positionComponent = new PositionComponent(1, 2);
+            var positionComponent = new PositionComponent(1, 2, 45);
 
             Assert.That(positionComponent, Is.Not.Null);
             Assert.That(positionComponent.X, Is.EqualTo(1));
             Assert.That(positionComponent.Y, Is.EqualTo(2));
+            Assert.That(positionComponent.Rotation, Is.EqualTo(45));
         }
 
         [Test]
         public void CreatePositionComponentAndChangeValues() {
-            var positionComponent = new PositionComponent(1, 2);
+            var positionComponent = new PositionComponent(1, 2, 45);
             positionComponent.X = 3;
             positionComponent.Y = 4;
+            positionComponent.Rotation = 90;
 
             Assert.That(positionComponent.X, Is.EqualTo(3));
             Assert.That(positionComponent.Y, Is.EqualTo(4));
+            Assert.That(positionComponent.Rotation, Is.EqualTo(90));
         }
 
 
@@ -49,7 +52,7 @@ namespace ComponentBasedSystem.UnitTest {
             Assert.That(velocityComponent, Is.Not.Null);
             Assert.That(velocityComponent.VelocityX, Is.EqualTo(1));
             Assert.That(velocityComponent.VelocityY, Is.EqualTo(2));
-            Assert.That(velocityComponent.Rotation, Is.EqualTo(45));
+            Assert.That(velocityComponent.AngularVelocity, Is.EqualTo(45));
         }
 
         [Test]
@@ -57,11 +60,11 @@ namespace ComponentBasedSystem.UnitTest {
             var velocityComponent = new VelocityComponent(1, 2, 45);
             velocityComponent.VelocityX = 3;
             velocityComponent.VelocityY = 4;
-            velocityComponent.Rotation = 90;
+            velocityComponent.AngularVelocity = 90;
 
             Assert.That(velocityComponent.VelocityX, Is.EqualTo(3));
             Assert.That(velocityComponent.VelocityY, Is.EqualTo(4));
-            Assert.That(velocityComponent.Rotation, Is.EqualTo(90));
+            Assert.That(velocityComponent.AngularVelocity, Is.EqualTo(90));
         }
     }
 }

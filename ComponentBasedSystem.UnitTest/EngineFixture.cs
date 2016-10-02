@@ -76,8 +76,8 @@ namespace ComponentBasedSystem.UnitTest {
             var tile = new Tile(null);
             engine.AddEntity(tile);
 
-            var positionComponent = new PositionComponent(1, 2);
-            var velocitycomponent = new VelocityComponent(3, 4, 45);
+            var positionComponent = new PositionComponent(1, 2, 45);
+            var velocitycomponent = new VelocityComponent(3, 4, 90);
             var bear = new Bear(positionComponent, velocitycomponent);
             engine.AddEntity(bear);
 
@@ -86,10 +86,17 @@ namespace ComponentBasedSystem.UnitTest {
 
             Assert.That(node != null);
             var id = node.Item1;
-            var moveNode = node.Item2;
+            var moveNode = node.Item2 as MoveNode;
             
             Assert.That(id, Is.EqualTo(1));
+            Assert.That(moveNode != null);
             Assert.That(moveNode, Is.TypeOf(typeof(MoveNode)));
+            Assert.That(moveNode.PositionComponent.X, Is.EqualTo(1));
+            Assert.That(moveNode.PositionComponent.Y, Is.EqualTo(2));
+            Assert.That(moveNode.PositionComponent.Rotation, Is.EqualTo(45));
+            Assert.That(moveNode.VelocityComponent.VelocityX, Is.EqualTo(3));
+            Assert.That(moveNode.VelocityComponent.VelocityY, Is.EqualTo(4));
+            Assert.That(moveNode.VelocityComponent.AngularVelocity, Is.EqualTo(90));
         }
 
 
