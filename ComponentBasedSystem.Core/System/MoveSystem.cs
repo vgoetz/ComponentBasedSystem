@@ -12,7 +12,9 @@ namespace ComponentBasedSystem.Core.System {
             foreach (MoveNode moveNode in nodes.Select(n => n.Item2 as MoveNode).Where(n => n != null)) {
                 moveNode.PositionComponent.X += moveNode.VelocityComponent.VelocityX*time;
                 moveNode.PositionComponent.Y += moveNode.VelocityComponent.VelocityY*time;
+                moveNode.PositionComponent.Rotation += moveNode.VelocityComponent.AngularVelocity*time;
             }
         }
     }
+
 }

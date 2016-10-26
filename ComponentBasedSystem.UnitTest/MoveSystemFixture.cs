@@ -98,5 +98,38 @@ namespace ComponentBasedSystem.UnitTest {
             Assert.That(moveNode.PositionComponent.Rotation, Is.EqualTo(rotation));
         }
 
+
+        [TestCase(0, 0, 10, 0, 0, 00, 0, 0, Result = 10)]
+        [TestCase(0, 0, 10, 0, 0, 01, 0, 0, Result = 11)]
+        [TestCase(0, 0, 10, 0, 0, 10, 0, 0, Result = 20)]
+        [TestCase(0, 0, 13, 0, 0, 13, 0, 0, Result = 26)]
+        //[TestCase(0, 0, 359, 0, 0, 2, 0, 0, Result = 1)]
+
+        //[TestCase(0, 0, 10, 0, 0, -00, 0, 0, Result = 10)]
+        //[TestCase(0, 0, 00, 0, 0, -00, 0, 0, Result = 00)]
+        //[TestCase(0, 0, 01, 0, 0, -02, 0, 0, Result = 359)]
+        //[TestCase(0, 0, 10, 0, 0, -01, 0, 0, Result = 09)]
+        //[TestCase(0, 0, 10, 0, 0, -10, 0, 0, Result = 00)]
+        //[TestCase(0, 0, 13, 0, 0, -13, 0, 0, Result = 00)]
+        //[TestCase(0, 0, 359, 0, 0, -2, 0, 0, Result = 357)]
+        public int NoMovementButRotation_ObjectRotates(int x, int y, int rotation, int velocityX, int velocityY, int angularVelocity, int resultX, int resultY) {
+            // Given
+            var moveSystem = new MoveSystem();
+            var nodeList = new List<Tuple<long, INode>>();
+            var tupel = new Tuple<long, INode>(0, new MoveNode {
+                PositionComponent = new PositionComponent(x, y, rotation),
+                VelocityComponent = new VelocityComponent(velocityX, velocityY, angularVelocity)
+            });
+            nodeList.Add(tupel);
+
+            // When
+            moveSystem.Update(1, nodeList);
+            var moveNode = nodeList.FirstOrDefault()?.Item2 as MoveNode;
+
+            // Then
+            Assert.That(moveNode != null);
+            return moveNode.PositionComponent.Rotation;
+        }
+
     }
 }
